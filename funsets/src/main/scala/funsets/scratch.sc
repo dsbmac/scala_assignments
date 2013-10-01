@@ -53,4 +53,18 @@ object scratch {
 	val p4 = s4                               //> p4  : Int => Boolean = <function1>
 	forall(s4, p4)                            //> res1: Boolean = true
 	
+	def map(s: Set, f: Int => Int): Set = {
+  	def iter(a: Int, collector: Set): Set = {
+  		if (a > 1000) collector
+  		else if (contains(s,a)) union(collector, singletonSet(f(a)))
+  		else iter(a+1, collector)
+  	}
+  	iter(-1000, (x: Int) => false)
+  }                                               //> map: (s: Int => Boolean, f: Int => Int)Int => Boolean
+	
+	val emptySet = (x: Int) => false          //> emptySet  : Int => Boolean = <function1>
+	val s6 = singletonSet(6)                  //> s6  : Int => Boolean = Set(6)
+	val s7 = union(emptySet, s6)              //> s7  : Int => Boolean = <function1>
+	contains(s7, 6)                           //> res2: Boolean = true
+	contains(s7, 0)                           //> res3: Boolean = false
 }

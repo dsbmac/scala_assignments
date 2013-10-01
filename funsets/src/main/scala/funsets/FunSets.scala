@@ -33,7 +33,7 @@ object FunSets {
    * Returns the intersection of the two given sets,
    * the set of all elements that are both in `s` and `t`.
    */
- def intersect(s: Set, t: Set): Set = {
+  def intersect(s: Set, t: Set): Set = {
   	x => contains(s, x) & contains(t, x)
   }  
   /**
@@ -81,7 +81,14 @@ def diff(s: Set, t: Set): Set = {
   /**
    * Returns a set transformed by applying `f` to each element of `s`.
    */
-  def map(s: Set, f: Int => Int): Set = ???
+  def map(s: Set, f: Int => Int): Set = {
+  	def iter(a: Int, collector: Set): Set = {
+  		if (a > 1000) collector
+  		else if (contains(s,a)) union(collector, singletonSet(f(a)))
+  		else iter(a+1, collector)
+  	}
+  	iter(-1000, (x: Int) => false)
+  }
 
   /**
    * Displays the contents of a set

@@ -50,6 +50,20 @@ object scratch {
 	forall(s3, p3);System.out.println("""res0: Boolean = """ + $show(res$0));$skip(40); 
 	val s4 = (x: Int) => -1000 < x & x < 0;System.out.println("""s4  : Int => Boolean = """ + $show(s4 ));$skip(13); 
 	val p4 = s4;System.out.println("""p4  : Int => Boolean = """ + $show(p4 ));$skip(16); val res$1 = 
-	forall(s4, p4);System.out.println("""res1: Boolean = """ + $show(res$1))}
+	forall(s4, p4);System.out.println("""res1: Boolean = """ + $show(res$1));$skip(254); 
 	
+	def map(s: Set, f: Int => Int): Set = {
+  	def iter(a: Int, collector: Set): Set = {
+  		if (a > 1000) collector
+  		else if (contains(s,a)) union(collector, singletonSet(f(a)))
+  		else iter(a+1, collector)
+  	}
+  	iter(-1000, (x: Int) => false)
+  };System.out.println("""map: (s: Int => Boolean, f: Int => Int)Int => Boolean""");$skip(37); 
+	
+	val emptySet = (x: Int) => false;System.out.println("""emptySet  : Int => Boolean = """ + $show(emptySet ));$skip(26); 
+	val s6 = singletonSet(6);System.out.println("""s6  : Int => Boolean = """ + $show(s6 ));$skip(30); 
+	val s7 = union(emptySet, s6);System.out.println("""s7  : Int => Boolean = """ + $show(s7 ));$skip(17); val res$2 = 
+	contains(s7, 6);System.out.println("""res2: Boolean = """ + $show(res$2));$skip(17); val res$3 = 
+	contains(s7, 0);System.out.println("""res3: Boolean = """ + $show(res$3))}
 }

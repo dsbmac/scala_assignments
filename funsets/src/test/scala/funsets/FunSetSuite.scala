@@ -119,11 +119,19 @@ class FunSetSuite extends FunSuite {
   
   test("exists") {
     new TestSets {
-	    val p = ((x: Int) => x > 2)
+	    val p = (x: Int) => x > 2
 	    val u1 = union(s1, s2)
 	    val u2 = union(s1, s3)
 	    assert(!exists(u1, p), "exists 1")
 	    assert(exists(u2, p), "exists 2")
+    }
+  }
+  
+  test("map") {
+    new TestSets {
+      val f = (x: Int) => x + 1
+      assert(contains(map(s1, f), 2), "map 1")
+      assert(!contains(map(s1, f), 1), "map 2")
     }
   }
 }

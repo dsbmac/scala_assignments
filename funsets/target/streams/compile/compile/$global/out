@@ -14,7 +14,7 @@
 [0m[[0mdebug[0m] [0m	external source: Set()[0m
 [0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(C:\Users\Denis\scala assignments\funsets\src\main\scala\funsets\FunSets.scala)[0m
 [0m[[0minfo[0m] [0mCompiling 1 Scala source to C:\Users\Denis\scala assignments\funsets\target\scala-2.10\classes...[0m
-[0m[[0mdebug[0m] [0mRunning cached compiler 1085cbe1, interfacing (CompilerInterface) with Scala compiler version 2.10.2[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 65b834bb, interfacing (CompilerInterface) with Scala compiler version 2.10.2[0m
 [0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
 [0m[[0mdebug[0m] [0m	-deprecation[0m
 [0m[[0mdebug[0m] [0m	-feature[0m
@@ -24,7 +24,7 @@
 [0m[[0mdebug[0m] [0m	C:\Users\Denis\algs4\java\lib\resources.jar;C:\Users\Denis\algs4\java\lib\rt.jar;C:\Users\Denis\algs4\java\lib\sunrsasign.jar;C:\Users\Denis\algs4\java\lib\jsse.jar;C:\Users\Denis\algs4\java\lib\jce.jar;C:\Users\Denis\algs4\java\lib\charsets.jar;C:\Users\Denis\algs4\java\lib\jfr.jar;C:\Users\Denis\algs4\java\classes;C:\Users\Denis\.sbt\boot\scala-2.10.2\lib\scala-library.jar[0m
 [0m[[0mdebug[0m] [0m	-classpath[0m
 [0m[[0mdebug[0m] [0m	C:\Users\Denis\scala assignments\funsets\target\scala-2.10\classes[0m
-[0m[[0mdebug[0m] [0mScala compilation took 0.923734081 s[0m
+[0m[[0mdebug[0m] [0mScala compilation took 1.616430984 s[0m
 [0m[[0mdebug[0m] [0mStep 2 changed sources and immdediate dependencies:[0m
 [0m[[0mdebug[0m] [0m	Set()[0m
 [0m[[0mdebug[0m] [0mNon-trivial strongly connected components: [0m
