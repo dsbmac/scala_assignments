@@ -40,7 +40,8 @@ abstract class TweetSet {
    * in the original set for which the predicate is true.
    *
    * Question: Can we implment this method here, or should it remain abstract
-   * and be implemented in the subclasses? MyAnswer: abstract how would you get left
+   * and be implemented in the subclasses? 
+   * MyAnswer: abstract. how would you get left
    * and right branch in nonEmpty set otherwise??
    */
   def filter(p: Tweet => Boolean): TweetSet 
@@ -56,7 +57,7 @@ abstract class TweetSet {
    * Question: Should we implment this method here, or should it remain abstract
    * and be implemented in the subclasses?
    */
-   def union(that: TweetSet): TweetSet = ???
+   def union(that: TweetSet): TweetSet
 
   /**
    * Returns the tweet from this set which has the greatest retweet count.
@@ -80,7 +81,11 @@ abstract class TweetSet {
    */
   def descendingByRetweet: TweetList = ???
 
-
+  /**
+   * Returns Boolean whether TweetSet is empty
+   */
+  def isEmpty(): Boolean
+  
   /**
    * The following methods are already implemented
    */
@@ -119,6 +124,13 @@ class Empty extends TweetSet {
     acc
   }
 
+   def union(that: TweetSet): TweetSet = {
+  		that
+   }
+   
+   def isEmpty(): Boolean = {
+     true
+   }
 
   /**
    * The following methods are already implemented
@@ -142,6 +154,10 @@ class NonEmpty(elem: Tweet, left: TweetSet, right: TweetSet) extends TweetSet {
 
   def filterAcc(p: Tweet => Boolean, acc: TweetSet): TweetSet = {
     if (p(elem)) acc.incl(elem) else acc
+  }
+  
+  def union(that: TweetSet): TweetSet = {
+  		left.union(right).union(that).incl(elem)
   }
 
   /**
@@ -168,6 +184,10 @@ class NonEmpty(elem: Tweet, left: TweetSet, right: TweetSet) extends TweetSet {
     f(elem)
     left.foreach(f)
     right.foreach(f)
+  }
+  
+  def isEmpty(): Boolean = {
+    false
   }
 }
 
